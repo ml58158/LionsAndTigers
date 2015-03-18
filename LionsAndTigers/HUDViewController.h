@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol HUDDelegate <NSObject>
+
+<#methods#>
+
+@end
+
 @interface HUDViewController : UIViewController
 
 @end
