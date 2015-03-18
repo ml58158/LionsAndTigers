@@ -19,15 +19,12 @@
     // Do any additional setup after loading the view.
 }
 
-- (IBAction)onLionsButtonTapped:(UIButton *)sender {
-
+- (IBAction)onLionsButtonPressed:(UIButton *)sender
+{
+    [self.delegate lionsButtonTapped];
 }
 
-
-- (IBAction)onTigersButtonTapped:(UIButton *)sender {
-
+- (IBAction)onTigersButtonPressed:(UIButton *)sender
+{
+    [self.delegate tigersButtonTapped];
 }
-
-
-
-@end

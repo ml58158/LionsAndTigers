@@ -22,6 +22,7 @@
 - (IBAction)onTopRevealButtonTapped:(UIBarButtonItem *)sender
 {
     [self.delegate topRevealButtonTapped:sender];
+    NSLog(@"Reveal Tapped");
 }
 
 

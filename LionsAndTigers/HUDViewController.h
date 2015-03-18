@@ -10,10 +10,13 @@
 
 @protocol HUDDelegate <NSObject>
 
-<#methods#>
+-(void)tigersButtonPressed;
+-(void)lionsButtonPressed;
 
 @end
 
 @interface HUDViewController : UIViewController
+
+@property (nonatomic, assign)id <HUDDelegate> delegate;
 
 @end

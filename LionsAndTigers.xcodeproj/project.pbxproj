@@ -87,11 +87,11 @@
 		C4EB4CB01ABA06A700B7CF4B /* LionsAndTigers */ = {
 			isa = PBXGroup;
 			children = (
-				C4EB4CD71ABA070800B7CF4B /* RootViewController.h */,
-				C4EB4CD81ABA070800B7CF4B /* RootViewController.m */,
 				C4EB4CB51ABA06A700B7CF4B /* AppDelegate.h */,
 				C4EB4CB61ABA06A700B7CF4B /* AppDelegate.m */,
 				C4EB4CBB1ABA06A700B7CF4B /* Main.storyboard */,
+				C4EB4CD71ABA070800B7CF4B /* RootViewController.h */,
+				C4EB4CD81ABA070800B7CF4B /* RootViewController.m */,
 				C4EB4CDD1ABA07AA00B7CF4B /* HUDViewController.h */,
 				C4EB4CDE1ABA07AA00B7CF4B /* HUDViewController.m */,
 				C4EB4CDA1ABA079100B7CF4B /* TopViewController.h */,
