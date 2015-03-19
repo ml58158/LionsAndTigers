@@ -8,9 +8,17 @@
 
 #import "RootViewController.h"
 #import "TopViewController.h"
-#import "HudViewController.h"
+#import "HUDViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController () <TopDelegate, HUDDelegate>
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightTopConstraint;
+@property (strong, nonatomic) IBOutlet UIView *topViewContainer;
+@property (strong, nonatomic) IBOutlet UIView *bottomViewController;
+
+@property TopViewController *tvc;
+@property HUDViewController *hvc;
 
 @end
 
@@ -18,11 +26,97 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    /**
+     *  Declares View Controller Delegates on self
+     */
+    self.tvc.delegate = self;
+    self.hvc.delegate = self;
+
+}
+
+#pragma mark - HUD Delegate
+
+-(void)lionsButtonTapped
+{
+    /**
+     *  Lion Pictures Array
+     */
+     self.lionArray = [NSMutableArray arrayWithObjects:
+    [UIImage imageNamed:@"lion_1"],
+    [UIImage imageNamed:@"lion_2"],
+    [UIImage imageNamed:@"lion_3"],nil];
+
+     self.tvc.photosArray = self.lionArray;
+    [self.tvc.collectionView reloadData];
+    [self topRevealButtonTapped];
+}
+
+-(void)tigersButtonTapped
+{
+    /**
+     *  Tiger Pictures Array
+     */
+
+    self.tigerArray = [NSMutableArray arrayWithObjects:
+    [UIImage imageNamed:@"tiger_1"],
+    [UIImage imageNamed:@"tiger_2"],
+    [UIImage imageNamed:@"tiger_3"],nil];
+
+     self.tvc.photosArray = self.tigerArray;
+    [self.tvc.collectionView reloadData];
+    [self topRevealButtonTapped];
+
+
 }
 
 
+#pragma mark - TopDelegate /Menu Button
 
+
+/**
+ *  Logic for Menu Button
+ */
+-(void)topRevealButtonTapped
+{
+    [UIView animateWithDuration:.5 animations:^{
+
+        //the margin
+        if (self.leftTopConstraint.constant == 0)
+        {
+            self.leftTopConstraint.constant += 100;
+            self.rightTopConstraint.constant -= 100;
+        }
+        else
+        {
+            self.leftTopConstraint.constant = 0;
+            self.rightTopConstraint.constant = 0;
+        }
+
+        [self.view layoutIfNeeded];
+        
+    }];
+}
+
+/**
+ *  Prepares current view controller for segue into next.
+ *
+ *  @param segue  RootViewController
+ *  @param sender Navigation View Controller or HUD View Controller
+ */
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"navigationSegue"])
+    {
+        //Since segue actually goes to the navigation controller, need to get view controller from it
+        UINavigationController *navControl = segue.destinationViewController;
+        self.tvc = [navControl.viewControllers objectAtIndex:0];
+    }
+    else if ([segue.identifier isEqualToString:@"HUDSegue"])
+    {
+        self.hvc = segue.destinationViewController;
+    }
+}
 
 
 @end

@@ -11,12 +11,15 @@
 
 @optional
 
--(void)topRevealButtonTapped:(UIBarButtonItem *)button;
+//-(void)topRevealButtonTapped:(UIBarButtonItem *)button;
+-(void)topRevealButtonTapped;
 
 @end
 
 @interface TopViewController : UIViewController
 
-@property(nonatomic , assign)id <TopDelegate> delegate;
+@property (nonatomic,assign)id <TopDelegate> delegate;
 
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property NSMutableArray *photosArray;
 @end

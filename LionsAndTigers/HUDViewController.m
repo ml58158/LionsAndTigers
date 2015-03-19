@@ -7,6 +7,8 @@
 //
 
 #import "HUDViewController.h"
+#import "TopViewController.h"
+#import "CustomCollectionViewCell.h"
 
 @interface HUDViewController ()
 
@@ -16,17 +18,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (IBAction)onLionsButtonPressed:(UIButton *)sender
-{
+/**
+ *  Lions Button
+ *
+ *  @param sender delegates button to self
+ */
+- (IBAction)onLionsButtonTapped:(UIButton *)sender {
     [self.delegate lionsButtonTapped];
 }
 
-- (IBAction)onTigersButtonPressed:(UIButton *)sender
-{
+/**
+ *  Tigers Button
+ *
+ *  @param sender delegates button to self
+ */
+
+- (IBAction)onTigersButtonTapped:(UIButton *)sender {
     [self.delegate tigersButtonTapped];
+
 }
 
-@end;
+
+
+@end
+

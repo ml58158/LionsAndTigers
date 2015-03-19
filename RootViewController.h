@@ -10,4 +10,11 @@
 
 @interface RootViewController : UIViewController
 
+/**
+ *  Defines properties for Arrays
+ */
+@property NSMutableArray *lionArray;
+@property NSMutableArray *tigerArray;
+@property NSMutableArray *photosArray;
+
 @end
