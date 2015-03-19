@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYV-5B-YXH">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="302"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                                 </variation>
                                 <connections>
                                     <segue destination="fzc-bP-8GJ" kind="embed" id="1tE-cY-WSf"/>
@@ -28,8 +29,8 @@
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3B-dl-8vP">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="302" width="400" height="298"/>
+                                <variation key="widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                                 </variation>
                                 <connections>
                                     <segue destination="Lxo-YC-Eky" kind="embed" id="30c-Za-7DZ"/>
@@ -53,14 +54,14 @@
                                 <exclude reference="Z3B-dl-8vP"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ZzE-Y0-X5f"/>
-                                <exclude reference="pQs-uF-H41"/>
-                                <exclude reference="yRm-U2-dGV"/>
+                                <exclude reference="0e8-Im-RIn"/>
                                 <exclude reference="IwP-Mc-tiv"/>
                                 <exclude reference="MmW-wH-QTa"/>
                                 <exclude reference="N8Y-z3-zqr"/>
                                 <exclude reference="phy-4S-o9P"/>
-                                <exclude reference="0e8-Im-RIn"/>
+                                <exclude reference="ZzE-Y0-X5f"/>
+                                <exclude reference="pQs-uF-H41"/>
+                                <exclude reference="yRm-U2-dGV"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -69,14 +70,14 @@
                                 <include reference="Z3B-dl-8vP"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ZzE-Y0-X5f"/>
-                                <include reference="pQs-uF-H41"/>
-                                <include reference="yRm-U2-dGV"/>
+                                <include reference="0e8-Im-RIn"/>
                                 <include reference="IwP-Mc-tiv"/>
                                 <include reference="MmW-wH-QTa"/>
                                 <include reference="N8Y-z3-zqr"/>
                                 <include reference="phy-4S-o9P"/>
-                                <include reference="0e8-Im-RIn"/>
+                                <include reference="ZzE-Y0-X5f"/>
+                                <include reference="pQs-uF-H41"/>
+                                <include reference="yRm-U2-dGV"/>
                             </mask>
                         </variation>
                     </view>
@@ -93,6 +94,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6OG-N2-b6Y"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JDs-H4-Eud">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -118,6 +120,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cc0-Jg-DmK"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tAB-ss-7Qt">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2G-LV-5ib">
@@ -129,6 +132,7 @@
                                     <rect key="frame" x="16" y="64" width="46" height="30"/>
                                 </variation>
                                 <connections>
+                                    <action selector="onLionsButtonPressed:" destination="Lxo-YC-Eky" eventType="touchUpInside" id="aE1-Nj-FO6"/>
                                     <action selector="onLionsButtonTapped:" destination="Lxo-YC-Eky" eventType="touchUpInside" id="2zn-v1-AGf"/>
                                 </connections>
                             </button>
@@ -141,6 +145,7 @@
                                     <rect key="frame" x="16" y="163" width="46" height="30"/>
                                 </variation>
                                 <connections>
+                                    <action selector="onTigersButtonPressed:" destination="Lxo-YC-Eky" eventType="touchUpInside" id="beV-0l-rl3"/>
                                     <action selector="onTigersButtonTapped:" destination="Lxo-YC-Eky" eventType="touchUpInside" id="5dC-pO-6gq"/>
                                 </connections>
                             </button>
@@ -156,8 +161,8 @@
                                 <exclude reference="Hjz-db-xg8"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="mHS-GQ-VTj"/>
                                 <exclude reference="x2M-gt-4LK"/>
+                                <exclude reference="mHS-GQ-VTj"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -166,8 +171,8 @@
                                 <include reference="Hjz-db-xg8"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="mHS-GQ-VTj"/>
                                 <include reference="x2M-gt-4LK"/>
+                                <include reference="mHS-GQ-VTj"/>
                             </mask>
                         </variation>
                     </view>
