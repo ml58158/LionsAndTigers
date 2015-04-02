@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Defines HUD Delegate
+ */
 @protocol HUDDelegate <NSObject>
 
-
+-(void)tigersButtonTapped;
+-(void)lionsButtonTapped;
 
 @end
 
