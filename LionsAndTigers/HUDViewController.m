@@ -29,7 +29,10 @@
     [self.delegate lionsButtonTapped];
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7ddb208c3781c1b69bfcedee3b160cd4534b0609
 /**
  *  Tigers Button
  *

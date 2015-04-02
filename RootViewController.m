@@ -79,6 +79,7 @@
  */
 -(void)topRevealButtonTapped
 {
+<<<<<<< HEAD
     [UIView animateWithDuration:0.5
                           delay:0.0
                         options: 0
@@ -100,6 +101,27 @@
 }
 
 
+=======
+    [UIView animateWithDuration:.5 animations:^{
+
+        //the margin
+        if (self.leftTopConstraint.constant == 0)
+        {
+            self.leftTopConstraint.constant += 100;
+            self.rightTopConstraint.constant -= 100;
+        }
+        else
+        {
+            self.leftTopConstraint.constant = 0;
+            self.rightTopConstraint.constant = 0;
+        }
+
+        [self.view layoutIfNeeded];
+        
+    }];
+}
+
+>>>>>>> 7ddb208c3781c1b69bfcedee3b160cd4534b0609
 /**
  *  Prepares current view controller for segue into next.
  *
